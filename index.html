@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oman News In Card</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style2.css" />
+    <link rel="icon" href="news.png" />
+  </head>
+  <body style="overflow: auto">
+    <div class="header">
+      <h4>Oman News In Card</h4>
+      <p>dont miss any news anymore!</p>
+      <div id="divNow"></div>
+      <button onclick="darkMode()" class="sw button-52">Darkmode</button>
+      <button onclick="Read()" class="sl button-52" id="bread">Read</button>
+      <!-- <div id="divHeader"></div> -->
+    </div>
+
+    <div class="tab">
+      <button
+      id="defaultOpen"
+        class="tablinks"
+        onclick="openCity(event, 'London'); onload()"
+      >
+        English
+      </button>
+      <button
+        class="tablinks Arabic"
+        onclick="openCity(event, 'Paris'); onLoadArabic()"
+      >
+        Arabic
+      </button>
+      <button
+        class="tablinks"
+        onclick="openCity(event, 'Tokyo'); onLoadCartoon()"
+      >
+        Cartoon
+      </button>
+    </div>
+
+    <div id="London" class="tabcontent">
+      <div class="container" id="employees"></div>
+    </div>
+
+    <div id="Paris" class="tabcontent Arabic">
+      <div class="container" id="divAlwatan"></div>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <div class="container" id="divCartoon"></div>
+    </div>
+
+    <div id="f1" class="footer">Developed by Abdul Hamid Al kharusi 2022</div>
+
+    <!-- partial:index.partial.html -->
+
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>
